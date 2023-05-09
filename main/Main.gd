@@ -8,7 +8,6 @@ var Question = preload("res://menu/Question.tscn")
 
 var level = 0
 var screensize = Vector2.ZERO
-var time_left = 0
 var score = 0
 onready var GameOverTimer = Timer.new()
 
@@ -19,12 +18,19 @@ func _ready():
 	timer_setting()
 	$HUD/GameOverLabel.visible = false
 	$HUD/MarginContainer2/LabelLevel.visible = true
-	time_left = 15
-	$HUD.update_timer(time_left)
+	Singleton.left_time = 15
+	$HUD.update_timer(Singleton.left_time)
 	screensize = get_viewport().get_visible_rect().size
+	Question.connect("question_answered",self,"_on_question_answered")
 	spawn_gems()
 	set_cherry_time()
 
+
+func _on_question_answered(answered_correctly):
+	if answered_correctly:
+		print("Respuesta correcta")
+	else:
+		print("Respuesta incorrecta")
 
 func timer_setting():
 	GameOverTimer.wait_time = 2
@@ -59,9 +65,9 @@ func spawn_gems():
 
 
 func _on_GameTimer_timeout():
-	time_left -= 1
-	$HUD.update_timer(time_left)
-	if time_left <= 0:
+	Singleton.left_time -= 1
+	$HUD.update_timer(Singleton.left_time)
+	if Singleton.left_time <= 0:
 		game_over()
 
 
@@ -74,8 +80,7 @@ func _on_Player_picked(type):
 			get_tree().paused = true
 			var question_scene = Question.instance()
 			add_child(question_scene)
-			time_left += 10
-			$HUD.update_score(time_left)
+			$HUD.update_score(Singleton.left_time)
 
 
 func game_over():

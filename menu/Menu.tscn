@@ -53,10 +53,10 @@ margin_right = 680.0
 margin_bottom = 519.0
 
 [node name="MenuBackgroundText" type="TextureRect" parent="MenuBackgroud"]
-margin_left = -3.0
-margin_top = -11.0
-margin_right = 2301.0
-margin_bottom = 1285.0
+margin_left = -5.0
+margin_top = -1.0
+margin_right = 2299.0
+margin_bottom = 1295.0
 texture = ExtResource( 3 )
 
 [node name="MenuName" type="Label" parent="."]
@@ -91,7 +91,7 @@ margin_top = 96.0
 margin_right = 749.0
 margin_bottom = 182.0
 custom_fonts/font = SubResource( 3 )
-text = "!Vacilatela aprendiendo estructuras de datos!"
+text = "Coastal experience of data structures"
 align = 1
 valign = 1
 

@@ -1,8 +1,9 @@
 extends Control
-
 var respuesta
 var pregunta_index
 var time_left = 0
+signal question_answered
+
 
 func _ready():
 	get_tree().paused = true
@@ -23,8 +24,10 @@ func _on_answer_a_pressed():
 	
 	if respuesta == 0:
 		button_a.modulate = Color(0,1,0)
+		Singleton.left_time +=10
 	else:
 		button_a.modulate = Color(1,0,0)
+		Singleton.left_time -=10
 	AnswerTime()
 
 
@@ -37,10 +40,12 @@ func _on_answer_b_pressed():
 	button_a.disabled = true
 	button_c.disabled = true
 	button_d.disabled = true
-	if respuesta == 1:
-		button_b.modulate = Color(0,1,0)
+	if respuesta == 0:
+		button_a.modulate = Color(0,1,0)
+		Singleton.left_time +=10
 	else:
-		button_b.modulate = Color(1,0,0)
+		button_a.modulate = Color(1,0,0)
+		Singleton.left_time -=10
 	AnswerTime()
 
 
@@ -55,13 +60,13 @@ func _on_answer_c_pressed():
 	button_b.disabled = true
 	button_a.disabled = true
 	button_d.disabled = true
-	if respuesta == 2:
-		button_c.modulate = Color(0,1,0)
+	if respuesta == 0:
+		button_a.modulate = Color(0,1,0)
+		Singleton.left_time +=10
 	else:
-		button_c.modulate = Color(1,0,0)
+		button_a.modulate = Color(1,0,0)
+		Singleton.left_time -=10
 	AnswerTime()
-
-
 
 func _on_answer_d_pressed():
 	var button_a = get_node("CanvasLayer/CenterContainer/VBoxContainer/answer_a")
@@ -72,11 +77,12 @@ func _on_answer_d_pressed():
 	button_b.disabled = true
 	button_c.disabled = true
 	button_a.disabled = true
-	if respuesta == 3:
-		button_d.modulate = Color(0,1,0)
+	if respuesta == 0:
+		button_a.modulate = Color(0,1,0)
+		Singleton.left_time +=10
 	else:
-		button_d.modulate = Color(1,0,0)
-	var timer = Timer.new()
+		button_a.modulate = Color(1,0,0)
+		Singleton.left_time -=10
 	AnswerTime()
 
 
