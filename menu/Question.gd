@@ -9,6 +9,7 @@ func _ready():
 	get_tree().paused = true
 	pregunta_index = rand_range(0, 4)
 	respuesta = read_file()
+	print(respuesta)
 	set_process_input(true)
 
 
@@ -27,7 +28,7 @@ func _on_answer_a_pressed():
 		Singleton.left_time +=10
 	else:
 		button_a.modulate = Color(1,0,0)
-		Singleton.left_time -=10
+		Singleton.left_time -=5
 	AnswerTime()
 
 
@@ -40,12 +41,12 @@ func _on_answer_b_pressed():
 	button_a.disabled = true
 	button_c.disabled = true
 	button_d.disabled = true
-	if respuesta == 0:
-		button_a.modulate = Color(0,1,0)
+	if respuesta == 1:
+		button_b.modulate = Color(0,1,0)
 		Singleton.left_time +=10
 	else:
-		button_a.modulate = Color(1,0,0)
-		Singleton.left_time -=10
+		button_b.modulate = Color(1,0,0)
+		Singleton.left_time -=5
 	AnswerTime()
 
 
@@ -60,12 +61,12 @@ func _on_answer_c_pressed():
 	button_b.disabled = true
 	button_a.disabled = true
 	button_d.disabled = true
-	if respuesta == 0:
-		button_a.modulate = Color(0,1,0)
+	if respuesta == 2:
+		button_c.modulate = Color(0,1,0)
 		Singleton.left_time +=10
 	else:
-		button_a.modulate = Color(1,0,0)
-		Singleton.left_time -=10
+		button_c.modulate = Color(1,0,0)
+		Singleton.left_time -=5
 	AnswerTime()
 
 func _on_answer_d_pressed():
@@ -77,12 +78,12 @@ func _on_answer_d_pressed():
 	button_b.disabled = true
 	button_c.disabled = true
 	button_a.disabled = true
-	if respuesta == 0:
-		button_a.modulate = Color(0,1,0)
+	if respuesta == 3:
+		button_d.modulate = Color(0,1,0)
 		Singleton.left_time +=10
 	else:
-		button_a.modulate = Color(1,0,0)
-		Singleton.left_time -=10
+		button_d.modulate = Color(1,0,0)
+		Singleton.left_time -=5
 	AnswerTime()
 
 

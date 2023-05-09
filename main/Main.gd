@@ -21,7 +21,6 @@ func _ready():
 	Singleton.left_time = 15
 	$HUD.update_timer(Singleton.left_time)
 	screensize = get_viewport().get_visible_rect().size
-	Question.connect("question_answered",self,"_on_question_answered")
 	spawn_gems()
 	set_cherry_time()
 
