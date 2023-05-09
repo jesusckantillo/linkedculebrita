@@ -8,7 +8,7 @@ var Question = preload("res://menu/Question.tscn")
 
 var level = 0
 var screensize = Vector2.ZERO
-var score = 0
+
 onready var GameOverTimer = Timer.new()
 
 var current_question = null
@@ -74,8 +74,8 @@ func _on_GameTimer_timeout():
 func _on_Player_picked(type):
 	match type:
 		'gem':
-			score += 1
-			$HUD.update_score(score)
+			Singleton.score += 1
+			$HUD.update_score(Singleton.score)
 		'cherry':
 			get_tree().paused = true
 			var question_scene = Question.instance()

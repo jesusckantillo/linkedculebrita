@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/y2mate.com - El Negro Y Ray.mp3-cb243b75386f3a158718dd6710c80823.mp3str"
+
+[deps]
+
+source_file="res://static/sounds/y2mate.com - El Negro Y Ray.mp3"
+dest_files=[ "res://.import/y2mate.com - El Negro Y Ray.mp3-cb243b75386f3a158718dd6710c80823.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
