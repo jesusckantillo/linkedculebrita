@@ -1,0 +1,44 @@
+{
+  "questions": [
+    {
+      "question": "What is a linked list?",
+      "answers": [
+        "A data structure that allows for sequential storage and access of elements.",
+        "A data structure that allows for random storage of elements.",
+        "A data structure that allows for ordered storage of elements.",
+        "A data structure that allows for hierarchical storage and access of elements."
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "What is the name of the operation that removes the element at the beginning of a linked list?",
+      "answers": [
+        "Pop",
+        "Push",
+        "Dequeue",
+        "Shift"
+      ],
+      "correct_answer": 3
+    },
+    {
+      "question": "What is a circular linked list?",
+      "answers": [
+        "A linked list in which the last node points to the first node.",
+        "A linked list in which each node has two pointers, one to the next node and one to the previous node.",
+        "A linked list in which the nodes are arranged in a tree-like structure.",
+        "A linked list in which each node has only one pointer to the next node."
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "What is the name of the operation that inserts an element at the end of a linked list?",
+      "answers": [
+        "Append",
+        "Prepend",
+        "Enqueue",
+        "Push"
+      ],
+      "correct_answer": 0
+    }
+  ]
+}

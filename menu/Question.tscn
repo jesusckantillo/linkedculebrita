@@ -1,0 +1,68 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://menu/Question.gd" type="Script" id=2]
+
+[node name="Question" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+pause_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.156863, 0.14902, 0.14902, 0.733333 )
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 340.0
+margin_top = 260.0
+margin_right = 160.0
+margin_bottom = 58.0
+use_top_left = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer"]
+margin_left = -37.0
+margin_top = -127.0
+margin_right = 36.0
+margin_bottom = 127.0
+custom_constants/separation = 40
+
+[node name="question" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+margin_right = 73.0
+margin_bottom = 14.0
+text = "Question"
+align = 1
+valign = 1
+
+[node name="answer_a" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+margin_top = 54.0
+margin_right = 73.0
+margin_bottom = 74.0
+text = "Answer A"
+
+[node name="answer_b" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+margin_top = 114.0
+margin_right = 73.0
+margin_bottom = 134.0
+text = "Answer B"
+
+[node name="answer_c" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+margin_top = 174.0
+margin_right = 73.0
+margin_bottom = 194.0
+text = "Answer C"
+
+[node name="answer_d" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+margin_top = 234.0
+margin_right = 73.0
+margin_bottom = 254.0
+text = "Answer D"
+
+[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/answer_a" to="." method="_on_answer_a_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/answer_b" to="." method="_on_answer_b_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/answer_c" to="." method="_on_answer_c_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/answer_d" to="." method="_on_answer_d_pressed"]
