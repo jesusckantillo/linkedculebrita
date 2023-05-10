@@ -9,7 +9,6 @@ func _ready():
 	get_tree().paused = true
 	pregunta_index = rand_range(0, 4)
 	respuesta = read_file()
-	print(respuesta)
 	set_process_input(true)
 
 
@@ -29,6 +28,7 @@ func _on_answer_a_pressed():
 	else:
 		button_a.modulate = Color(1,0,0)
 		Singleton.left_time -=5
+		correct_answer()
 	AnswerTime()
 
 
@@ -47,6 +47,7 @@ func _on_answer_b_pressed():
 	else:
 		button_b.modulate = Color(1,0,0)
 		Singleton.left_time -=5
+		correct_answer()
 	AnswerTime()
 
 
@@ -67,6 +68,7 @@ func _on_answer_c_pressed():
 	else:
 		button_c.modulate = Color(1,0,0)
 		Singleton.left_time -=5
+		correct_answer()
 	AnswerTime()
 
 func _on_answer_d_pressed():
@@ -84,6 +86,7 @@ func _on_answer_d_pressed():
 	else:
 		button_d.modulate = Color(1,0,0)
 		Singleton.left_time -=5
+		correct_answer()
 	AnswerTime()
 
 
@@ -115,4 +118,16 @@ func read_file():
 			
 	return respuesta_correcta
 
-
+func correct_answer():
+	var button_a = get_node("CanvasLayer/CenterContainer/VBoxContainer/answer_a")
+	var button_b = get_node("CanvasLayer/CenterContainer/VBoxContainer/answer_b")
+	var button_c = get_node("CanvasLayer/CenterContainer/VBoxContainer/answer_c")
+	var button_d = get_node("CanvasLayer/CenterContainer/VBoxContainer/answer_d")
+	if respuesta == 0:
+		button_a.modulate = Color(0,1,0)
+	elif respuesta == 1:
+		button_b.modulate = Color(0,1,0)
+	elif respuesta == 2:
+		button_c.modulate = Color(0,1,0)
+	elif respuesta == 3:
+		button_d.modulate = Color(0,1,0)
